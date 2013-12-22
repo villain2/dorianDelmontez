@@ -9,16 +9,16 @@
     <script src="js/modernizr.js"></script>
 </head>
     
-<body>
+<body ng-app="ddApp">
     
     <header>
         <nav class="top-bar" data-topbar>
         
             <ul class="title-area">
                 <li class="name">
-                    <h1><a href="#">Dorian Delmontez <sup>&trade;</sup></a></h1>
+                    <h1><a href="#" title="Sign In">Sign In</a></h1>
                 </li>
-                <li class="toggle-topbar menu-icon"><a href="#"></a></li>
+                <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
             </ul>
             
             <section class="top-bar-section">
@@ -33,11 +33,30 @@
         </nav>
     </header>
     
+    <div class="mainContainer" data-ng-controller="mainCtrl">
+        <div class="row">
+            <div class="small-10 large-centered columns">
+                <img src="img/logos/dorian_logo_1.png" alt="Dorian Delmontez' 10th Birthday">
+                
+                <h1>Welcome to the Dea</h1>
+                <p><em><strong>Dorian Delmontez</strong></em> is a quintette of young adult fantasy stories about a young boy who receives a magical book for his tenth birthday that leads him to a vibrant, colorful riot of a world that will change him forever.</p>
+                <h3>Explore</h3>
+                <p>Use the interactive map to see all the different cities, towns, landscapes and islands of the fantasy world known as The Dea. Exploring different areas of the Dea gain your different rewards.</p>
+                    
+                <h3>Read</h3>
+                <p>The story of Dorian Delmontez is rich and expansive. Get information on characters, backstories, family trees, environments and more. The more samples you read, the more characters you unlock.
+                
+                <h3>Play</h3>
+                <p>When you have enough characters and abilities stored up from exploring and reading, move on to our online game and use what you've learned to fend of the forces of Shallowhale and Avidity.</p>
+            </div>
+        </div>
+    </div>
+    
     
     <footer class="footer">
         <div class="row">
             <div class="small-2 large-4 columns">
-                Dorian Delmontez<sup>&trade;</sup>
+                <img src="img/logos/bottom_left_logo.png" alt="Dorian Delmontez">
             </div>
             <div class="small-2 large-4 columns"></div>
             <div class="small-2 large-4 columns">
@@ -53,6 +72,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="js/Main.js"></script>
     <script>
       $(document).foundation();
     </script>
