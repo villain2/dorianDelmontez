@@ -3,3 +3,24 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0; }
+
+.footer {
+  height: 50px;
+  padding: 10px;
+  background: black;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  color: white; }
+  .footer ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 12px; }
+    .footer ul li a {
+      color: white; }
+
+/*** foundation fixes ***/
+.top-bar {
+  height: 60px; }
