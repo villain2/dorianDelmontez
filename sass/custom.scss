@@ -14,8 +14,40 @@ html, body {
     margin: 0;
 }
 
+header {
+    z-index: 2;
+    position: relative;
+}
+
 .mainContainer {
     padding-bottom: 120px;
+    .logoHeader {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .homePageCopy {
+        color: white;
+        text-shadow: 1px 2px 1px #121212;
+        h1, h2, h3 {
+            color: white;
+            text-shadow: none;
+        }
+    }
+}
+
+.mainContainerBG {
+    background: url("../img/backgrounds/background.jpg") no-repeat 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 980px;
+    min-height: 600px;
 }
 
 .footer {
@@ -51,4 +83,5 @@ html, body {
 /*** foundation fixes ***/
 .top-bar {
     height: 60px;
+    padding-top: 6px;
 }
