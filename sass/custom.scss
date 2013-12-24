@@ -94,6 +94,10 @@ img {
 .top-bar {
     height: 60px;
     padding-top: 6px;
+    background: url('../img/backgrounds/header_stripe.png') repeat top left darkorange;
+    -moz-box-shadow: -5px -5px 5px 5px #333;
+    -webkit-box-shadow: -5px -5px 5px 5px #333;
+    box-shadow: -5px -5px 5px 5px #333;
 }
 
 .top-bar-section ul li.active > a {
