@@ -11,7 +11,7 @@
     
 <body ng-app="ddApp">
     
-    <header>
+    <header data-ng-controller="navCtrl">
         <nav class="top-bar" data-topbar>
         
             <ul class="title-area">
@@ -23,11 +23,7 @@
             
             <section class="top-bar-section">
                 <ul class="right">
-                    <li><a href="" title="10th Birthday">10<sup>th</sup></a></li>
-                    <li class="disabled"><a href="" title="12th Birthday">12<sup>th</sup></a></li>
-                    <li class="disabled"><a href="" title="14th Birthday">14<sup>th</sup></a></li>
-                    <li class="disabled"><a href="" title="16th Birthday">16<sup>th</sup></a></li>
-                    <li class="disabled"><a href="" title="18th Birthday">18<sup>th</sup></a></li>
+                    <li data-ng-repeat="item in bookNav | orderBy: id" class="{{item.class}}"><a href="{{item.url}}" title="{{item.title}}">{{item.navTitle}}</a></li>
                 </ul>
             </section>
         </nav>
@@ -35,7 +31,7 @@
     
     <div class="mainContainerBG"></div>
     
-    <div class="mainContainer" data-ng-controller="mainCtrl">
+    <div class="mainContainer">
         
         <div class="row">
             <div class="small-12 large-centered columns">

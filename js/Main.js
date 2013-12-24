@@ -4,7 +4,14 @@ ddApp.factory('Data', function () {
 	return {message: "I'm data from a service."};
 });
 
-function mainCtrl($scope, Data) {
-    $scope.data     = Data;
-    console.log($scope);
-}
+ddApp.controller("navCtrl", function($scope, $http) {
+    $scope.bookNav     = [];
+    
+    $http.get('scripts/json/layout.json')
+    .success(function(data) {
+        $scope.bookNav                 = data[0].bookItems;
+        console.log($scope);
+    })
+})
+
+
