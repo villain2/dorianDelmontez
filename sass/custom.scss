@@ -28,6 +28,9 @@ header {
     .homePageCopy {
         color: white;
         text-shadow: 1px 2px 1px #121212;
+        h1 {
+            text-shadow: 1px 2px 1px #121212;
+        }
         h1, h2, h3 {
             color: white;
             text-shadow: none;
@@ -80,8 +83,33 @@ header {
     }
 }
 
+img {
+    &.noScale {
+        min-width: 135px;
+        min-height: 50px;
+    }
+}
+
 /*** foundation fixes ***/
 .top-bar {
     height: 60px;
     padding-top: 6px;
 }
+
+.top-bar-section ul li.active > a {
+    background: #000000;
+}
+
+.top-bar-section ul li.disabled > a {
+    color: #989898;
+}
+
+
+
+
+
+
+
+
+
+

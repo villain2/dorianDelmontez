@@ -1,7 +1,15 @@
 var ddApp = angular.module("ddApp", [])
 
+.factory('facebook', [function () {
+    return FB;
+}])
+
 .controller("navCtrl", function($scope, $http) {
     $scope.bookNav     = [];
+    
+    $scope.showLoginModal = function () {
+        alert('show modal login window');
+    }
     
     $http.get('scripts/json/layout.json')
     .success(function(data) {
