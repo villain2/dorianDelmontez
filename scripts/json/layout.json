@@ -1,0 +1,27 @@
+[
+    {
+        "bookItems": [
+            {
+                "id": 0,
+                "title": "Dorian Delmontez' 10th Birthday",
+                "navTitle": "10th",
+                "class": "bookNav active",
+                "url": ""
+            },
+            {
+                "id": 1,
+                "title": "Dorian Demontez' 12th Birthday",
+                "navTitle": "12th",
+                "class": "bookNav disabled",
+                "url": ""
+            },
+            {
+                "id": 2,
+                "title": "Dorian Demontez' 14th Birthday",
+                "navTitle": "14th",
+                "class": "bookNav disabled",
+                "url": ""
+            }
+        ]
+    }
+]
