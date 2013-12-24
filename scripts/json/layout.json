@@ -21,6 +21,20 @@
                 "navTitle": "14th",
                 "class": "bookNav disabled",
                 "url": ""
+            },
+            {
+                "id": 3,
+                "title": "Dorian Demontez' 16th Birthday",
+                "navTitle": "16th",
+                "class": "bookNav disabled",
+                "url": ""
+            },
+            {
+                "id": 4,
+                "title": "Dorian Demontez' 18th Birthday",
+                "navTitle": "18th",
+                "class": "bookNav disabled",
+                "url": ""
             }
         ]
     }

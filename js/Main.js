@@ -1,17 +1,19 @@
-var ddApp = angular.module("ddApp", []);
+var ddApp = angular.module("ddApp", [])
 
-ddApp.factory('Data', function () {
-	return {message: "I'm data from a service."};
-});
-
-ddApp.controller("navCtrl", function($scope, $http) {
+.controller("navCtrl", function($scope, $http) {
     $scope.bookNav     = [];
     
     $http.get('scripts/json/layout.json')
     .success(function(data) {
         $scope.bookNav                 = data[0].bookItems;
-        console.log($scope);
     })
 })
 
+
+.directive("audioLoop", function () {
+    return {
+        restrict: 'E',
+        template: '<audio autoplay loop><source src="/audio/soundtrack2.ogg" type="audio/ogg"><source src="/audio/soundtrack2.mp3" type="audio/mpeg">Update to a modern browser to hear this soundtrack.</audio>'
+    }
+})
 
