@@ -8,7 +8,7 @@ var ddApp = angular.module("ddApp", [])
     $scope.bookNav     = [];
     
     $scope.showLoginModal = function () {
-        alert('show modal login window');
+        $('#loginModal').foundation('reveal', 'open', '');
     }
     
     $http.get('scripts/json/layout.json')
