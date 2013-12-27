@@ -1,8 +1,31 @@
-var ddApp = angular.module("ddApp", [])
+var ddApp = angular.module("ddApp", ['ngRoute'])
 
 .factory('facebook', [function () {
     return FB;
 }])
+
+.config(function ($routeProvider) {
+    $routeProvider
+    .when('/', {
+        templateUrl: '/templates/index.html',
+        controller: 'navCtrl'
+    })
+    .when('/explore', {
+        templateUrl: '/templates/explore.html',
+        controller: 'navCtrl'
+    })
+    .when('/read', {
+        templateUrl: '/templates/read.html',
+        controller: 'navCtrl'
+    })
+    .when('/play', {
+      templateUrl: '/templates/play.html',
+        controller: 'navCtrl'
+    })
+    .otherwise({
+        redirectTo: '/'
+    })
+})
 
 .controller("navCtrl", function($scope, $http) {
     $scope.bookNav     = [];
@@ -15,6 +38,13 @@ var ddApp = angular.module("ddApp", [])
     .success(function(data) {
         $scope.bookNav                 = data[0].bookItems;
     })
+    
+    $scope.message          = "New Page";
+})
+
+.controller("aboutCtrl", function($scope, $route) {
+    $scope.message = "About page";
+    console.log($route);
 })
 
 

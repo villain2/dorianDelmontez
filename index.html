@@ -34,41 +34,27 @@
     
     <div class="mainContainer">
         
-        <div class="row">
-            <div class="small-centered large-centered large-offset-1 small-offset-3 columns">
-                <div class="logoHeader">
-                    <img src="img/logos/dorian_logo_1.png" alt="Dorian Delmontez' 10th Birthday">
-                </div>
-                
-                <div class="homePageCopy">
-                    <h1>Welcome to the Dea</h1>
-                    <p><em><strong>Dorian Delmontez</strong></em> is a quintette of young adult fantasy stories about a young boy who receives a magical book for his tenth birthday that leads him to a vibrant, colorful riot of a world that will change him forever.</p>
-                    <h3>Explore</h3>
-                    <p>Use the interactive map to see all the different cities, towns, landscapes and islands of the fantasy world known as The Dea. Exploring different areas of the Dea gain your different rewards.</p>
-                        
-                    <h3>Read</h3>
-                    <p>The story of Dorian Delmontez is rich and expansive. Get information on characters, backstories, family trees, environments and more. The more samples you read, the more characters you unlock.
-                    
-                    <h3>Play</h3>
-                    <p>When you have enough characters and abilities stored up from exploring and reading, move on to our online game and use what you've learned to fend of the forces of Shallowhale and Avidity.</p>
-                </div>
-            </div>
-        </div>
+        <div ng-view></div>
+        
     </div>
     
     
     <footer class="footer">
         <div class="row">
-            <div class="small-2 large-4 columns">
-                <img src="img/logos/bottom_left_logo.png" alt="Dorian Delmontez" class="noScale">
+            <div class="small-12 medium-4 large-4 columns centered">
+                <a href="/" title="Dorian Delmontez' Home Page">
+                    <img src="img/logos/bottom_left_logo.png" alt="Dorian Delmontez" class="noScale">
+                </a>
             </div>
-            <div class="small-2 large-4 columns"></div>
-            <div class="small-8 large-4 columns right">
-                <ul>
-                    <li><a href="#" title="Explore">Explore</a></li>
-                    <li><a href="#" title="Read">Read</a></li>
-                    <li><a href="#" title="Play">Play</a></li>
-                </ul>
+            <div class="small-12 medium-4 large-4 columns legal">
+                <span><a href="" title="Terms of Use">Terms Of Use</a></span> |
+                <span><a href="" title="Copyright">Copyright</a></span> |
+                <span><a href="" title="Privacy Policy">Privacy Policy</a></span>
+            </div>
+            <div class="small-12 medium-4 large-4 columns centered">
+                <div class="aoeStudiosLogo">
+                    <a href="http://aoestudios.com" title="AOE Studios Official Website" target="_blank"><img src="img/logos/aoestudios.png" alt="AOE Studios Logo"></a>
+                </div>
             </div>
         </div>
     </footer>
@@ -82,6 +68,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="http://code.angularjs.org/snapshot/angular-route.js"></script>
     <script src="js/Main.js"></script>
     <script>
       $(document).foundation();

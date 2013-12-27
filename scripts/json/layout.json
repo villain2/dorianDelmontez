@@ -2,39 +2,25 @@
     {
         "bookItems": [
             {
-                "id": 0,
-                "title": "Dorian Delmontez' 10th Birthday",
-                "navTitle": "10th",
-                "class": "bookNav active",
-                "url": ""
-            },
-            {
                 "id": 1,
-                "title": "Dorian Demontez' 12th Birthday",
-                "navTitle": "12th",
-                "class": "bookNav disabled",
-                "url": ""
+                "title": "Explore",
+                "navTitle": "Explore",
+                "class": "bookNav",
+                "url": "/#/explore"
             },
             {
                 "id": 2,
-                "title": "Dorian Demontez' 14th Birthday",
-                "navTitle": "14th",
-                "class": "bookNav disabled",
-                "url": ""
+                "title": "Read",
+                "navTitle": "Read",
+                "class": "bookNav",
+                "url": "/#/read"
             },
             {
                 "id": 3,
-                "title": "Dorian Demontez' 16th Birthday",
-                "navTitle": "16th",
-                "class": "bookNav disabled",
-                "url": ""
-            },
-            {
-                "id": 4,
-                "title": "Dorian Demontez' 18th Birthday",
-                "navTitle": "18th",
-                "class": "bookNav disabled",
-                "url": ""
+                "title": "Play",
+                "navTitle": "Play",
+                "class": "bookNav",
+                "url": "/#/play"
             }
         ]
     }

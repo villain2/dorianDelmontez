@@ -3,7 +3,20 @@ html, body {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-size: 14px;
+  background: none; }
+
+a {
+  -moz-transition: 0.75s all;
+  -ms-transition: 0.75s all;
+  -webkit-transition: 0.75s all;
+  -o-transition: 0.75s all;
+  transition: 0.75s all; }
+
+img.noScale {
+  min-width: 135px;
+  min-height: 50px; }
 
 header {
   z-index: 2;
@@ -13,7 +26,43 @@ header {
   padding-bottom: 120px; }
   .mainContainer .logoHeader {
     margin: 0 auto;
-    text-align: center; }
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    top: 0; }
+  .mainContainer .homePageBoxes {
+    background: rgba(0, 0, 0, 0.8);
+    width: 98%;
+    min-height: 222px;
+    padding: 8px;
+    border: 1px solid #fff;
+    margin-bottom: 9px;
+    cursor: pointer;
+    display: block;
+    -moz-transition: 0.75s all;
+    -ms-transition: 0.75s all;
+    -webkit-transition: 0.75s all;
+    -o-transition: 0.75s all;
+    transition: 0.75s all; }
+    .mainContainer .homePageBoxes:hover {
+      -moz-transition: 0.75s all;
+      -ms-transition: 0.75s all;
+      -webkit-transition: 0.75s all;
+      -o-transition: 0.75s all;
+      transition: 0.75s all;
+      background: black; }
+      .mainContainer .homePageBoxes:hover p, .mainContainer .homePageBoxes:hover h2 {
+        color: #ffffff;
+        -moz-transition: 0.75s all;
+        -ms-transition: 0.75s all;
+        -webkit-transition: 0.75s all;
+        -o-transition: 0.75s all;
+        transition: 0.75s all; }
+    .mainContainer .homePageBoxes p, .mainContainer .homePageBoxes h1, .mainContainer .homePageBoxes h2 {
+      color: #989898; }
+    .mainContainer .homePageBoxes p {
+      font-size: 0.9em;
+      line-height: 1.52em; }
   .mainContainer .homePageCopy {
     color: white;
     text-shadow: 1px 2px 1px #121212; }
@@ -24,7 +73,7 @@ header {
       text-shadow: none; }
 
 .mainContainerBG {
-  background: url("../img/backgrounds/background.jpg") no-repeat 50% 50%;
+  background: url("../img/backgrounds/theDea_bg.jpg") no-repeat 50% 50%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -34,8 +83,8 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  min-width: 980px;
-  min-height: 600px; }
+  min-width: 320px;
+  min-height: 480px; }
 
 .footer {
   height: 80px;
@@ -47,6 +96,24 @@ header {
   bottom: 0;
   left: 0;
   color: white; }
+  .footer .centered {
+    text-align: center; }
+  .footer .legal {
+    text-align: center;
+    padding: 28px 0 0 0; }
+    .footer .legal span {
+      padding: 0 4px;
+      font-size: 0.8em; }
+    .footer .legal a {
+      color: #989898; }
+    .footer .legal a:hover {
+      color: #dadada;
+      text-decoration: underline; }
+  .footer .aoestudiosLogo {
+    max-width: 128px;
+    max-height: 128px;
+    display: block;
+    cursor: pointer; }
   .footer ul li {
     display: inline-block;
     list-style: none;
@@ -56,30 +123,58 @@ header {
       display: block;
       height: 100%;
       padding: 20px 12px;
-      -moz-transition: 0.5s all;
-      -ms-transition: 0.5s all;
-      -webkit-transition: 0.5s all;
-      -o-transition: 0.5s all;
-      transition: 0.5s all; }
+      -moz-transition: 0.75s all;
+      -ms-transition: 0.75s all;
+      -webkit-transition: 0.75s all;
+      -o-transition: 0.75s all;
+      transition: 0.75s all; }
     .footer ul li a:hover {
       background: #656565;
       color: #dadada; }
-
-img.noScale {
-  min-width: 135px;
-  min-height: 50px; }
 
 /*** foundation fixes ***/
 .top-bar {
   height: 60px;
   padding-top: 6px;
-  background: url("../img/backgrounds/header_stripe.png") repeat top left darkorange;
+  background: rgba(0, 0, 0, 0.5);
   -moz-box-shadow: -5px -5px 5px 5px #333;
   -webkit-box-shadow: -5px -5px 5px 5px #333;
   box-shadow: -5px -5px 5px 5px #333; }
 
+.top-bar-section ul {
+  background: rgba(77, 61, 61, 0.5); }
+
+.top-bar-section li a:not(.button) {
+  background: rgba(255, 0, 0, 0.05);
+  -moz-transition: 0.75s all;
+  -ms-transition: 0.75s all;
+  -webkit-transition: 0.75s all;
+  -o-transition: 0.75s all;
+  transition: 0.75s all; }
+
 .top-bar-section ul li.active > a {
-  background: #000000; }
+  background: none;
+  -moz-transition: 0.75s all;
+  -ms-transition: 0.75s all;
+  -webkit-transition: 0.75s all;
+  -o-transition: 0.75s all;
+  transition: 0.75s all; }
 
 .top-bar-section ul li.disabled > a {
   color: #989898; }
+
+/*** media queries ***/
+@media screen and (max-width: 640px) {
+  .mainContainer {
+    padding-bottom: 200px; }
+    .mainContainer .homePageBoxes {
+      min-height: inherit; }
+      .mainContainer .homePageBoxes h2 {
+        font-size: 1.05em; }
+      .mainContainer .homePageBoxes p {
+        font-size: 0.65em; }
+
+  .footer {
+    height: 200px; }
+    .footer .legal {
+      margin: 0 0 20px 0; } }

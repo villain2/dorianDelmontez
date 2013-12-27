@@ -1,10 +1,10 @@
 /*** mixins ***/
 @mixin sTransitions {
-    -moz-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    transition: 0.5s all;
+    -moz-transition: 0.75s all;
+    -ms-transition: 0.75s all;
+    -webkit-transition: 0.75s all;
+    -o-transition: 0.75s all;
+    transition: 0.75s all;
 }
 
 html, body {
@@ -12,6 +12,19 @@ html, body {
     height: 100%;
     padding: 0;
     margin: 0;
+    font-size: 14px;
+    background: none;
+}
+
+a {
+    @include sTransitions;
+}
+
+img {
+    &.noScale {
+        min-width: 135px;
+        min-height: 50px;
+    }
 }
 
 header {
@@ -24,6 +37,35 @@ header {
     .logoHeader {
         margin: 0 auto;
         text-align: center;
+        z-index: 2;
+        position: relative;
+        top: 0;
+    }
+    .homePageBoxes {
+        background: rgba(0,0,0,0.8);
+        width: 98%;
+        min-height: 222px;
+        padding: 8px;
+        border: 1px solid #fff;
+        margin-bottom: 9px;
+        cursor: pointer;
+        display: block;
+        @include sTransitions;
+        &:hover {
+            @include sTransitions;
+            background: rgba(0,0,0,1);
+            p, h2 {
+                color: #ffffff;
+                @include sTransitions;
+            }
+        }
+        p, h1, h2 {
+            color: #989898;
+        }
+        p {
+            font-size: 0.9em;
+            line-height: 1.52em;
+        }
     }
     .homePageCopy {
         color: white;
@@ -39,7 +81,7 @@ header {
 }
 
 .mainContainerBG {
-    background: url("../img/backgrounds/background.jpg") no-repeat 50% 50%;
+    background: url("../img/backgrounds/theDea_bg.jpg") no-repeat 50% 50%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -49,8 +91,8 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    min-width: 980px;
-    min-height: 600px;
+    min-width: 320px;
+    min-height: 480px;
 }
 
 .footer {
@@ -63,6 +105,30 @@ header {
     bottom: 0;
     left: 0;
     color: white;
+    .centered {
+        text-align: center;
+    }
+    .legal {
+        text-align: center;
+        padding: 28px 0 0 0;
+        span {
+            padding: 0 4px;
+            font-size: 0.8em;
+        }
+        a {
+            color: #989898;
+        }
+        a:hover {
+            color: #dadada;
+            text-decoration: underline;
+        }
+    }
+    .aoestudiosLogo {
+        max-width: 128px;
+        max-height: 128px;
+        display: block;
+        cursor: pointer;
+    }
     ul {
         li {
             display: inline-block;
@@ -83,25 +149,28 @@ header {
     }
 }
 
-img {
-    &.noScale {
-        min-width: 135px;
-        min-height: 50px;
-    }
-}
-
 /*** foundation fixes ***/
 .top-bar {
     height: 60px;
     padding-top: 6px;
-    background: url('../img/backgrounds/header_stripe.png') repeat top left darkorange;
+    background: rgba(0,0,0,0.5);
     -moz-box-shadow: -5px -5px 5px 5px #333;
     -webkit-box-shadow: -5px -5px 5px 5px #333;
     box-shadow: -5px -5px 5px 5px #333;
 }
 
+.top-bar-section ul {
+    background: rgba(77, 61, 61, 0.5);
+}
+
+.top-bar-section li a:not(.button) {
+    background: rgba(255, 0, 0, 0.05);
+                @include sTransitions;
+}
+
 .top-bar-section ul li.active > a {
-    background: #000000;
+    background: none;
+                @include sTransitions;
 }
 
 .top-bar-section ul li.disabled > a {
@@ -109,7 +178,28 @@ img {
 }
 
 
-
+/*** media queries ***/
+@media screen and (max-width: 640px) {
+    .mainContainer {
+        padding-bottom: 200px;
+        .homePageBoxes {
+            h2 {
+                font-size: 1.05em;
+            }
+            p {
+                font-size: 0.65em;
+            }
+            min-height: inherit;
+        }
+    }
+    
+    .footer {
+        height: 200px;
+        .legal {
+            margin: 0 0 20px 0;
+        }
+    }
+}
 
 
 
