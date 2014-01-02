@@ -29,7 +29,7 @@ header {
     text-align: center;
     z-index: 2;
     position: relative;
-    top: 0; }
+    top: -30px; }
   .mainContainer .homePageBoxes {
     background: rgba(0, 0, 0, 0.8);
     width: 98%;
