@@ -4,6 +4,11 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
     return FB;
 }])
 
+.service('pageTransitions', ['$rootScope', function ($rootScope) {
+    var switchBackground                = false;
+    return switchBackground;
+}])
+
 .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
@@ -16,7 +21,7 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
     })
     .when('/read', {
         templateUrl: '/templates/read.html',
-        controller: 'navCtrl'
+        controller: 'readCtrl'
     })
     .when('/play', {
       templateUrl: '/templates/play.html',
@@ -47,6 +52,12 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
     console.log($route);
 })
 
+.controller('readCtrl', function($scope, $route) {
+    $scope.message      = "Read Page";
+    console.log($route);
+
+})
+
 
 .directive("audioLoop", function () {
     return {
@@ -55,3 +66,25 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
     }
 })
 
+.directive("changeBackground", function () {
+    return function (scope, element, attrs) {
+        var newBG           = attrs.changeBackground;
+        var bgContainer     = $('.mainContainerBG');
+
+        switch (newBG) {
+            case 'background':
+                TweenLite.to(bgContainer, 0.75, {opacity: 0, delay: 1, onComplete: loadBackground})
+            break;
+
+            default:
+            break;
+        }
+
+        function loadBackground() {
+            console.log('load bg: ' + newBG);
+            bgContainer.css('background-image', 'url(/img/backgrounds/' + newBG + '.jpg)');
+            TweenLite.to(bgContainer, 0.75, {opacity: 1, delay: 1});
+        }
+    }
+
+})
