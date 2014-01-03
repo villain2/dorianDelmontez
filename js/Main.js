@@ -13,7 +13,7 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
     $routeProvider
     .when('/', {
         templateUrl: '/templates/index.html',
-        controller: 'navCtrl'
+        controller: 'indexCtrl'
     })
     .when('/explore', {
         templateUrl: '/templates/explore.html',
@@ -47,12 +47,18 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
     $scope.message          = "New Page";
 })
 
-.controller("aboutCtrl", function($scope, $route) {
+.controller('indexCtrl', function ($scope, $route) {
+    $scope.message      = "Home Page";
+    console.log($route);
+
+})
+
+.controller("aboutCtrl", function ($scope, $route) {
     $scope.message = "About page";
     console.log($route);
 })
 
-.controller('readCtrl', function($scope, $route) {
+.controller('readCtrl', function ($scope, $route) {
     $scope.message      = "Read Page";
     console.log($route);
 
@@ -74,6 +80,14 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
         switch (newBG) {
             case 'background':
                 TweenLite.to(bgContainer, 0.75, {opacity: 0, delay: 1, onComplete: loadBackground})
+            break;
+
+            case 'theDea_bg':
+                TweenLite.to(bgContainer, 0.75, {opacity: 0, delay: 1, onComplete: loadBackground})
+            break;
+
+            case 'none':
+                TweenLite.to(bgContainer, 0.75, {opacity: 0, delay: 1})
             break;
 
             default:
