@@ -132,6 +132,31 @@ header {
       background: #656565;
       color: #dadada; }
 
+/*** floating story divs ***/
+.floatingPaperContainer {
+  margin: 0 20px;
+  height: 500px;
+  overflow-y: scroll; }
+
+.floatingPaper {
+  width: 300px;
+  height: auto;
+  margin: 0 20px;
+  float: left;
+  background: black;
+  padding: 20px; }
+  .floatingPaper h1 {
+    font-family: Georgia, sans-serif;
+    font-size: 19px;
+    color: white;
+    font-weight: bold;
+    padding: 0 0 20px 0; }
+  .floatingPaper p {
+    font-family: Georgia, sans-serif;
+    font-size: 12px;
+    color: #545454;
+    font-weight: normal; }
+
 /*** foundation fixes ***/
 .top-bar {
   height: 60px;

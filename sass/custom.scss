@@ -8,6 +8,13 @@
 
 }
 
+@mixin fGeorgia($fontSize, $fontColor, $fontWeight) {
+    font-family: Georgia, sans-serif;
+    font-size: $fontSize;
+    color: $fontColor;
+    font-weight: $fontWeight;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -147,6 +154,29 @@ header {
                 color: #dadada;
             }
         }
+    }
+}
+
+/*** floating story divs ***/
+.floatingPaperContainer {
+    margin: 0 20px;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.floatingPaper {
+    width: 300px;
+    height: auto;
+    margin: 0 20px;
+    float: left;
+    background: black;
+    padding: 20px;
+    h1 {
+        @include fGeorgia(19px, #ffffff, bold);
+        padding: 0 0 20px 0;
+    }
+    p {
+        @include fGeorgia(12px, #545454, normal);
     }
 }
 
