@@ -12,9 +12,9 @@ controller('Level1Ctrl', ['$scope', '$rootScope', '$window', function ($scope, $
 	GameController($scope);
 
 	function setupField() {
-		$rootScope.gameField 			= new Array();
+		$rootScope.gameField 			= [];
 		for (var i = 0; i < 5; i++) {
-			$rootScope.gameField[i]		= new Array();
+			$rootScope.gameField[i]		= [];
 			for(var j = 0; j < 9; j++) {
 				$rootScope.gameField[i][j] 	= 0;
 			}
