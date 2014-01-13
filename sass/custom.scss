@@ -5,7 +5,6 @@
     -webkit-transition: 0.75s all;
     -o-transition: 0.75s all;
     transition: 0.75s all;
-
 }
 
 @mixin fGeorgia($fontSize, $fontColor, $fontWeight) {
@@ -29,10 +28,11 @@ a {
 }
 
 img {
-    &.noScale {
-        min-width: 135px;
-        min-height: 50px;
-    }
+}
+
+.noScale {
+    min-width: 135px;
+    min-height: 50px;
 }
 
 header {
@@ -141,7 +141,7 @@ header {
         li {
             display: inline-block;
             list-style: none;
-            padding: 12x 0;
+            padding: 12px 0;
             a {
                 color: white;
                 display: block;

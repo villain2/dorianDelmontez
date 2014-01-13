@@ -1,6 +1,8 @@
 module.exports = function (grunt) {
-	pkg: grunt.file.readJSON('package.json'),
 	grunt.initConfig({
+
+		pkg: grunt.file.readJSON('package.json'),
+
 		copy: {
 			target: {
 				files: {
@@ -28,7 +30,20 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				src: ['js/**/*.js'],
-				dest: 'bin/js/dorianDelmontez.js'
+				dest: 'bin/js/<%= pkg.name %>.js'
+			}
+		},
+		sass: {
+			dist: {
+				files: {
+					'css/custom.css' : 'sass/custom.scss'
+				}
+			}
+		},
+		watch: {
+			css: {
+				files: '**/*.scss',
+				tasks: ['sass']
 			}
 		}
 	});
@@ -37,7 +52,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	//tasks
 	grunt.registerTask('default', ['copy', 'concat']);
+	grunt.registerTask('dev', ['sass']);
 }

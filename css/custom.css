@@ -14,7 +14,7 @@ a {
   -o-transition: 0.75s all;
   transition: 0.75s all; }
 
-img.noScale {
+.noScale {
   min-width: 135px;
   min-height: 50px; }
 
@@ -117,7 +117,7 @@ header {
   .footer ul li {
     display: inline-block;
     list-style: none;
-    padding: 12x 0; }
+    padding: 12px 0; }
     .footer ul li a {
       color: white;
       display: block;
