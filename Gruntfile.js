@@ -28,10 +28,11 @@ module.exports = function (grunt) {
 			options: {
 				separator: ';'
 			},
-			dist: {
-				src: ['js/**/*.js'],
-				dest: 'bin/js/<%= pkg.name %>.js'
-			}
+			jsConcat: {
+				files: [
+					{src: ['js/modernizer.js', 'js/foundation.min.js', 'js/jquery.js', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js'], dest: 'bin/js/<%= pkg.name %>.js'}
+				],
+			},
 		},
 		sass: {
 			dist: {
