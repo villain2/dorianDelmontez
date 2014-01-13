@@ -4,7 +4,7 @@ module.exports = function (grunt) {
 		copy: {
 			target: {
 				files: {
-					'bin/': ['css/**']
+					'bin/': ['css/**', 'img/**', 'json/**', 'index.html']
 				}
 			}
 		},
@@ -21,12 +21,23 @@ module.exports = function (grunt) {
 				},
 				src: ['css/*.css']
 			}
+		},
+		concat: {
+			options: {
+				separator: ';'
+			},
+			dist: {
+				src: ['js/**/*.js'],
+				dest: 'bin/js/dorianDelmontez.js'
+			}
 		}
 	});
 
 	//plugins
-	grunt.loadNpmTasks('grunt-contrib');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-csslint');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	//tasks
-	grunt.registerTask('default', ['copy']);
+	grunt.registerTask('default', ['copy', 'concat']);
 }
