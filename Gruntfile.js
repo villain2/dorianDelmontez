@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 		copy: {
 			target: {
 				files: {
-					'bin/': ['css/**', 'img/**', 'json/**', 'index.html']
+					'bin/': ['css/**', 'img/**', 'json/**', 'scripts/**', 'index.html']
 				}
 			}
 		},
@@ -26,11 +26,11 @@ module.exports = function (grunt) {
 		},
 		concat: {
 			options: {
-				separator: ';'
+				separator: '\n\n'
 			},
 			jsConcat: {
 				files: [
-					{src: ['js/modernizer.js', 'js/foundation.min.js', 'js/jquery.js', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js'], dest: 'bin/js/<%= pkg.name %>.js'}
+					{src: ['js/modernizr.js', 'js/foundation.min.js', 'js/jquery.js', 'js/libs/angular.min.js'], dest: 'bin/js/<%= pkg.name %>.js'}
 				],
 			},
 		},
@@ -57,6 +57,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	//tasks
-	grunt.registerTask('default', ['copy', 'concat']);
+	grunt.registerTask('default', ['sass', 'copy', 'concat']);
 	grunt.registerTask('dev', ['sass']);
 }

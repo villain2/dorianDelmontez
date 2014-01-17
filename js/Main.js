@@ -61,6 +61,10 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
 .controller('readCtrl', function ($scope, $route) {
     $scope.message      = "Read Page";
     console.log($route);
+    
+    $scope.readPaper = function (storyID) {
+        console.log(storyID);
+    }
 
 })
 

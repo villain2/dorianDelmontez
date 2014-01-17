@@ -132,30 +132,119 @@ header {
       background: #656565;
       color: #dadada; }
 
-/*** floating story divs ***/
+/*** floating paper panels ***/
 .floatingPaperContainer {
   margin: 0 20px;
   height: 500px;
-  overflow-y: scroll; }
+  /* 
+  overflow-y: scroll; 
+  */ }
 
 .floatingPaper {
-  width: 300px;
+  position: relative;
+  width: 200px;
+  min-height: 300px;
   height: auto;
   margin: 0 20px;
-  float: left;
-  background: black;
-  padding: 20px; }
+  background: url("../img/read_carousel/paper_bg.png") no-repeat top transparent;
+  padding: 20px 30px;
+  display: block;
+  cursor: pointer;
+  -moz-transform: translateX(30px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(0deg) rotate(25deg);
+  -webkit-transform: translateX(50px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(10deg) rotate(25deg);
+  -ms-transform: translateX(30px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(0deg) rotate(25deg);
+  transform: translateX(30px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(0deg) rotate(25deg);
+  -moz-animation: paper_float ease 3.75s infinite;
+  -webkit-animation: paper_float ease 3.75s infinite;
+  -ms-animation: paper_float ease 3.75s infinite;
+  animation: paper_float ease 3.75s infinite; }
   .floatingPaper h1 {
     font-family: Georgia, sans-serif;
     font-size: 19px;
-    color: white;
+    color: #545454;
     font-weight: bold;
     padding: 0 0 20px 0; }
   .floatingPaper p {
     font-family: Georgia, sans-serif;
     font-size: 12px;
-    color: #545454;
+    color: black;
     font-weight: normal; }
+  .floatingPaper:hover {
+    -webkit-transform: translateX(0px) translateY(0px) translateZ(100px) rotateX(0deg) rotateY(0deg) rotate(0deg);
+    -moz-transform: translateX(0px) translateY(0px) translateZ(100px) rotateX(0deg) rotateY(0deg) rotate(0deg);
+    -ms-transform: translateX(0px) translateY(0px) translateZ(100px) rotateX(0deg) rotateY(0deg) rotate(0deg);
+    transform: translateX(0px) translateY(0px) translateZ(100px) rotateX(0deg) rotateY(0deg) rotate(0deg);
+    /* -webkit-animation: paper_float_hover ease 0.75s infinite;
+     -moz-animation: paper_float_hover ease 0.75s infinite;
+     -ms-animation: paper_float_hover ease 0.75s infinite;
+     animation: paper_float_hover ease 0.75s infinite;*/ }
+
+@-webkit-keyframes paper_float {
+  0% {
+    top: 0px; }
+
+  50% {
+    top: 10px; }
+
+  100% {
+    top: 0px; } }
+
+@-moz-keyframes paper_float {
+  50% {
+    top: 10px; }
+
+  100% {
+    top: 0px; } }
+
+@-ms-keyframes paper_float {
+  50% {
+    top: 10px; }
+
+  100% {
+    top: 0px; } }
+
+@keyframes paper_float {
+  50% {
+    top: 10px; }
+
+  100% {
+    top: 0px; } }
+
+@-webkit-keyframes paper_float_hover {
+  100% {
+    z-index: 200;
+    top: 10px;
+    -webkit-transform: translateZ(100px); }
+
+  100% {
+    top: 0px; } }
+
+@-moz-keyframes paper_float_hover {
+  100% {
+    z-index: 200;
+    top: 10px;
+    -webkit-transform: translateZ(100px); }
+
+  100% {
+    top: 0px; } }
+
+@-ms-keyframes paper_float_hover {
+  100% {
+    z-index: 200;
+    top: 10px;
+    -webkit-transform: translateZ(100px); }
+
+  100% {
+    top: 0px; } }
+
+@keyframes paper_float_hover {
+  100% {
+    z-index: 200;
+    top: 10px;
+    -webkit-transform: translateZ(100px); }
+
+  100% {
+    top: 0px; } }
 
 /*** foundation fixes ***/
 .top-bar {
