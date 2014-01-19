@@ -1,4 +1,4 @@
-var ddApp = angular.module("ddApp", ['ngRoute'])
+var ddApp = angular.module("ddApp", ['ngRoute', 'ngSanitize'])
 
 .factory('facebook', [function () 
 {
@@ -39,12 +39,14 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
 {
     $scope.bookNav     = [];
     
-    $scope.showLoginModal = function () {
+    $scope.showLoginModal = function () 
+    {
         $('#loginModal').foundation('reveal', 'open', '');
     }
     
     $http.get('scripts/json/layout.json')
-    .success(function(data) {
+    .success(function(data) 
+    {
         $scope.bookNav      = data[0].bookItems;
     })
     
@@ -64,25 +66,24 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
     console.log($route);
 })
 
-.controller('readCtrl', function ($scope, $route) 
+.controller('readCtrl', function ($scope, $route, $http) 
 {
     $scope.message      = "Read Page";
-    console.log($route);
 
-    //Randomize output for scaling
-    var randX, randY, randZ;
+    //variables
+    var papersObj, totalPapers;
 
-    $scope.getRandom = function (min, max) {
-        return Math.random() * (max - min) + min;
-    }
-    
-    $scope.readPaper = function (storyID) {
-        console.log(storyID);
-    }
+    //get json for each paper to display
+    $http.get('scripts/json/storySamples.json')
+    .success(function(data) 
+    {
+        papersObj               = data[0].storySamples;
+        totalPapers             = papersObj.length;
+        $scope.papersObj        = papersObj;
+    })
 
-    for(var i = 0; i < 3; i++) {
-        $scope.getRandom(3,322);
-        console.log($scope.getRandom(3,233));
+    $scope.readPaper = function () {
+        console.log(this.paper.id);
     }
 
 })
