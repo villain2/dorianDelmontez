@@ -1,15 +1,18 @@
 var ddApp = angular.module("ddApp", ['ngRoute'])
 
-.factory('facebook', [function () {
+.factory('facebook', [function () 
+{
     return FB;
 }])
 
-.service('pageTransitions', ['$rootScope', function ($rootScope) {
+.service('pageTransitions', ['$rootScope', function ($rootScope)
+{
     var switchBackground                = false;
     return switchBackground;
 }])
 
-.config(function ($routeProvider) {
+.config(function ($routeProvider) 
+{
     $routeProvider
     .when('/', {
         templateUrl: '/templates/index.html',
@@ -32,7 +35,8 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
     })
 })
 
-.controller("navCtrl", function($scope, $http) {
+.controller("navCtrl", function($scope, $http) 
+{
     $scope.bookNav     = [];
     
     $scope.showLoginModal = function () {
@@ -41,43 +45,61 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
     
     $http.get('scripts/json/layout.json')
     .success(function(data) {
-        $scope.bookNav                 = data[0].bookItems;
+        $scope.bookNav      = data[0].bookItems;
     })
     
     $scope.message          = "New Page";
 })
 
-.controller('indexCtrl', function ($scope, $route) {
+.controller('indexCtrl', function ($scope, $route) 
+{
     $scope.message      = "Home Page";
     console.log($route);
 
 })
 
-.controller("aboutCtrl", function ($scope, $route) {
+.controller("aboutCtrl", function ($scope, $route) 
+{
     $scope.message = "About page";
     console.log($route);
 })
 
-.controller('readCtrl', function ($scope, $route) {
+.controller('readCtrl', function ($scope, $route) 
+{
     $scope.message      = "Read Page";
     console.log($route);
+
+    //Randomize output for scaling
+    var randX, randY, randZ;
+
+    $scope.getRandom = function (min, max) {
+        return Math.random() * (max - min) + min;
+    }
     
     $scope.readPaper = function (storyID) {
         console.log(storyID);
     }
 
+    for(var i = 0; i < 3; i++) {
+        $scope.getRandom(3,322);
+        console.log($scope.getRandom(3,233));
+    }
+
 })
 
 
-.directive("audioLoop", function () {
+.directive("audioLoop", function () 
+{
     return {
         restrict: 'E',
         template: '<audio autoplay loop><source src="/audio/soundtrack2.ogg" type="audio/ogg"><source src="/audio/soundtrack2.mp3" type="audio/mpeg">Update to a modern browser to hear this soundtrack.</audio>'
     }
 })
 
-.directive("changeBackground", function () {
-    return function (scope, element, attrs) {
+.directive("changeBackground", function () 
+{
+    return function (scope, element, attrs) 
+    {
         var newBG           = attrs.changeBackground;
         var bgContainer     = $('.mainContainerBG');
 
@@ -98,7 +120,8 @@ var ddApp = angular.module("ddApp", ['ngRoute'])
             break;
         }
 
-        function loadBackground() {
+        function loadBackground() 
+        {
             console.log('load bg: ' + newBG);
             bgContainer.css('background-image', 'url(/img/backgrounds/' + newBG + '.jpg)');
             TweenLite.to(bgContainer, 0.75, {opacity: 1, delay: 1});

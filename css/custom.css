@@ -154,10 +154,10 @@ header {
   -webkit-transform: translateX(50px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(10deg) rotate(25deg);
   -ms-transform: translateX(30px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(0deg) rotate(25deg);
   transform: translateX(30px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(0deg) rotate(25deg);
-  -moz-animation: paper_float ease 3.75s infinite;
-  -webkit-animation: paper_float ease 3.75s infinite;
-  -ms-animation: paper_float ease 3.75s infinite;
-  animation: paper_float ease 3.75s infinite; }
+  /*     -moz-animation: paper_float ease 3.75s infinite;
+      -webkit-animation: paper_float ease 3.75s infinite;
+      -ms-animation: paper_float ease 3.75s infinite;
+      animation: paper_float ease 3.75s infinite; */ }
   .floatingPaper h1 {
     font-family: Georgia, sans-serif;
     font-size: 19px;
@@ -169,6 +169,19 @@ header {
     font-size: 12px;
     color: black;
     font-weight: normal; }
+  .floatingPaper .learnMore {
+    font-family: Georgia, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    -moz-transition: 0.75s all;
+    -ms-transition: 0.75s all;
+    -webkit-transition: 0.75s all;
+    -o-transition: 0.75s all;
+    transition: 0.75s all; }
+    .floatingPaper .learnMore:hover {
+      cursor: pointer;
+      color: #989898; }
   .floatingPaper:hover {
     -webkit-transform: translateX(0px) translateY(0px) translateZ(100px) rotateX(0deg) rotateY(0deg) rotate(0deg);
     -moz-transform: translateX(0px) translateY(0px) translateZ(100px) rotateX(0deg) rotateY(0deg) rotate(0deg);
@@ -181,34 +194,55 @@ header {
 
 @-webkit-keyframes paper_float {
   0% {
-    top: 0px; }
+    top: 0px;
+    left: 0px; }
 
   50% {
-    top: 10px; }
+    top: 24px;
+    left: 0px; }
 
   100% {
-    top: 0px; } }
+    top: 0px;
+    left: 0px; } }
 
 @-moz-keyframes paper_float {
+  0% {
+    top: 0px;
+    left: 0px; }
+
   50% {
-    top: 10px; }
+    top: 4px;
+    left: 0px; }
 
   100% {
-    top: 0px; } }
+    top: 0px;
+    left: 0px; } }
 
 @-ms-keyframes paper_float {
+  0% {
+    top: 0px;
+    left: 0px; }
+
   50% {
-    top: 10px; }
+    top: 4px;
+    left: 0px; }
 
   100% {
-    top: 0px; } }
+    top: 0px;
+    left: 0px; } }
 
 @keyframes paper_float {
+  0% {
+    top: 0px;
+    left: 0px; }
+
   50% {
-    top: 10px; }
+    top: 4px;
+    left: 0px; }
 
   100% {
-    top: 0px; } }
+    top: 0px;
+    left: 0px; } }
 
 @-webkit-keyframes paper_float_hover {
   100% {
