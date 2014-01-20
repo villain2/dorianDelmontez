@@ -203,18 +203,6 @@ header {
     display: block;
     cursor: pointer;
 
-    /* 
-
-    -moz-transform: translateX(30px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(0deg) rotate(25deg);
-    -webkit-transform: translateX(50px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(10deg) rotate(25deg);
-    -ms-transform: translateX(30px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(0deg) rotate(25deg);
-    transform: translateX(30px) translateY(0px) translateZ(0px) rotateX(45deg) rotateY(0deg) rotate(25deg);
- */
-/*     -moz-animation: paper_float ease 3.75s infinite;
-    -webkit-animation: paper_float ease 3.75s infinite;
-    -ms-animation: paper_float ease 3.75s infinite;
-    animation: paper_float ease 3.75s infinite; */
-
     h1 {
         @include fGeorgia(19px, #545454, bold);
         padding: 0 0 20px 0;
@@ -295,6 +283,73 @@ header {
 @-moz-keyframes paper_float_hover { 100% { z-index: 200; top: 10px;  -webkit-transform: translateZ(100px) } 100% { top: 0px; } };
 @-ms-keyframes paper_float_hover { 100% { z-index: 200; top: 10px;  -webkit-transform: translateZ(100px) } 100% { top: 0px; } };
 @keyframes paper_float_hover { 100% { z-index: 200; top: 10px;  -webkit-transform: translateZ(100px) } 100% { top: 0px; } };
+
+
+.paperModal {
+    background: url("../img/backgrounds/old_paper.jpg") repeat top left 50%;
+    border: none;
+    text-align: center;
+    ul {
+        li {
+            @include fGeorgia(1em, #333333, normal);
+            text-align: left;
+            line-height: 1.35em;
+            padding: 0 0 12px 0;
+        }
+    }
+    h1 {
+        @include fGeorgia(3em, #333333, bold);
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 12px;
+        line-height: 0.88em;
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        @include fGeorgia(1.22em, #304411, bold);
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        margin: 12px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.54em;
+    }
+    h3 {
+        @include fGeorgia(1.88em, #232323, bold);
+        margin: 12px 0;
+        padding: 4px;
+        line-height: 0.95em;
+    }
+    figure {
+        text-align: left;
+        line-height: 0.55em;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        img {
+            margin: 4px;
+            padding: 2px;
+            border: 1px solid #000000;
+        }
+        figcaption {
+            @include fGeorgia(0.35em, #333333, normal);
+            font-style: italic;
+        }
+    }
+}
+
+.paperColumn.borders {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    padding: 0 12px;
+    text-align: left;
+    max-height: 500px;
+    overflow-y: auto;
+    p {
+        @include fGeorgia(14px, #010101, normal);
+        padding: 4px 0;
+    }
+}
 
 /*** foundation fixes ***/
 .top-bar {

@@ -1,4 +1,6 @@
-.config(function ($routeProvider) {
+angular.module('ddApp')
+.config(function ($routeProvider) 
+{
     $routeProvider
     .when('/', {
         templateUrl: '/templates/index.html',
