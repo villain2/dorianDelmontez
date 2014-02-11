@@ -30,7 +30,10 @@ module.exports = function (grunt) {
 			},
 			jsConcat: {
 				files: [
-					{src: ['js/modernizr.js', 'js/foundation.min.js', 'js/jquery.js', 'js/libs/angular.min.js'], dest: 'bin/js/<%= pkg.name %>.js'}
+					{
+                        src: ['js/modernizr.js', 'js/foundation.min.js', 'js/jquery.js', 'js/libs/angular.min.js'], 
+                        dest: 'bin/js/<%= pkg.name %>.js'
+                    }
 				],
 			},
 		},
