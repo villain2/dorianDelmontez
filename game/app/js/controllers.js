@@ -11,15 +11,18 @@ controller('Level1Ctrl', ['$scope', '$rootScope', '$window', function ($scope, $
         drawActor();
         GameController($scope);
 
-        function setupField() {
-                $rootScope.gameField                         = [];
-                for (var i = 0; i < 5; i++) {
-                        $rootScope.gameField[i]                = [];
-                        for(var j = 0; j < 9; j++) {
-                                $rootScope.gameField[i][j]         = 0;
-                        }
+        function setupField() 
+        {
+            $rootScope.gameField = [];
+            for (var i = 0; i < 5; i++) 
+            {
+                $rootScope.gameField[i] = [];
+                    for(var j = 0; j < 9; j++) 
+                    {
+                        $rootScope.gameField[i][j] = 0;
+                    }
                 }
-                drawField();
+            drawField();
         }
 
         function drawField() {
@@ -56,30 +59,34 @@ controller('Level1Ctrl', ['$scope', '$rootScope', '$window', function ($scope, $
                 actorImg.src                         = "img/actors/warrior/warrior_idle.png";
         }
 
-        function addActor () {
+        function addActor () 
+        {
+            var data = {
+                images: [actorImg],
+                frames: {width: 64, height: 64, regX: 32, regY: 32},
+                animations: {idle: [0, 10, "idle"]}
+            }
 
-                var data = {
-                        images: [actorImg],
-                        frames: {width: 64, height: 64, regX: 32, regY: 32},
-                        animations: {idle: [0, 10, "idle"]}
+            //create multiple
+            for( var i = 0; i < 5; i++) 
+            {
+                for(var j = 0; j < 3; j++) 
+                {
+                    var spriteSheet     = new createjs.SpriteSheet(data);
+                    var animation       = new createjs.Sprite(spriteSheet, "idle");
+                    animation.x         = Math.round( 32.5+65*j );
+                    animation.y         = Math.round( 32.5+75*i);
+                    stage.addChild(animation);
                 }
+            }
 
-                //create multiple
-                for( var i = 0; i < 5; i++) {
-                        for(var j = 0; j < 3; j++) {
-                                var spriteSheet                 = new createjs.SpriteSheet(data);
-                                var animation                         = new createjs.Sprite(spriteSheet, "idle");
-                                animation.x                        = Math.round( 32.5+65*j );
-                                animation.y                        = Math.round( 32.5+75*i);
-                                stage.addChild(animation);
-                        }
-                }
+            /*
+            animation.x                                = Math.round(65/2);
+            animation.y                                = Math.round(75/2);
+            stage.addChild(animation);
+            */
 
-/*                animation.x                                = Math.round(65/2);
-                animation.y                                = Math.round(75/2);
-                stage.addChild(animation);*/
-
-                createjs.Ticker.addEventListener("tick", tick);
+            createjs.Ticker.addEventListener("tick", tick);
         }
 
 

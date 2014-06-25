@@ -1,0 +1,27 @@
+[
+    {
+        "bookItems": [
+            {
+                "id": 1,
+                "title": "Explore",
+                "navTitle": "Explore",
+                "class": "bookNav",
+                "url": "/#/explore"
+            },
+            {
+                "id": 2,
+                "title": "Read",
+                "navTitle": "Read",
+                "class": "bookNav",
+                "url": "/#/read"
+            },
+            {
+                "id": 3,
+                "title": "Play",
+                "navTitle": "Play",
+                "class": "bookNav",
+                "url": "/#/play"
+            }
+        ]
+    }
+]

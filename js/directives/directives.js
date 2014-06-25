@@ -40,3 +40,20 @@ angular.module('ddApp')
     }
 
 })
+
+.directive('loadPaperModal', function ()
+{
+    var changeTemplate;
+    
+    return {
+        restrict: 'E',
+        scope: {
+            value: '@'
+        },
+        templateUrl: '{{value}}'
+        /*link: function (scope, element, attrs)
+        {
+            element.text('templates/paperStories/loche_brothers.html');
+        }*/
+    }
+})
