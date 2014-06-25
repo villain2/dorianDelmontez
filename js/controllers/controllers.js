@@ -48,11 +48,12 @@ controller("navCtrl", function($scope, $http)
 
     $scope.readPaper = function () {
         console.log(this.paper.id);
-        $scope.showPaperModal();
+        $scope.showPaperModal(this.paper.link);
     }
     
-    $scope.showPaperModal = function () 
+    $scope.showPaperModal = function (paperLink) 
     {
+        console.log(paperLink);
         $('#paperModal').foundation('reveal', 'open', '');
     }
 
