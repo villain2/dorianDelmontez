@@ -10,7 +10,23 @@
 </head>
     
 <body>
-    <header>
+    <header data-ng-controller="navCtrl">
+        <nav class="top-bar" data-topbar>
+        
+            <ul class="title-area">
+                <li class="name">
+                    <h1 data-ng-click="showLoginModal()"><a href="#" title="Sign In">Sign In</a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+            </ul>
+            
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li data-ng-repeat="item in bookNav | orderBy: id" class="{{item.class}}"><a href="{{item.url}}" title="{{item.title}}">{{item.navTitle}}</a></li>
+                </ul>
+            </section>
+        </nav>
+        <audio-loop></audio-loop>    
     </header>
 
     <div class="mainContainer">
@@ -26,6 +42,8 @@
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/tweenlite/TweenLite.min.js"></script>
     <script src="bower_components/modernizr/modernizr.js"></script>
+
+    <script src="js/Main.js"><script>
     <!-- END JAVASCRIPT -->
 </body>
 </html>
