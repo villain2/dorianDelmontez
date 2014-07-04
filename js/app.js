@@ -7,7 +7,8 @@
 	DorianDelmontez.PartialsPath		= "partials/";
 	DorianDelmontez.Modules 			= {};
 	DorianDelmontez.Configs				= {};
-	DorianDelmontez.Factories			= {};
+	DorianDelmontez.Factory				= {};
 	DorianDelmontez.Controllers 		= {};
-	DorianDelmontez.Directive 			= {};
+	DorianDelmontez.Directives 			= {};
+	
 }(window.DorianDelmontez = window.DorianDelmontez || {} ));

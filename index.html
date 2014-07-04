@@ -6,12 +6,11 @@
     <title>The Dorian Delmontez Series</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/custom.css" type="text/css">
-    <script src="js/modernizr.js"></script>
 </head>
     
-<body>
-    <header data-ng-controller="navCtrl">
-        <nav class="top-bar" data-topbar>
+<body data-ng-app="dd">
+    <header generaldir>
+        <nav class="top-bar">
         
             <ul class="title-area">
                 <li class="name">
@@ -22,6 +21,7 @@
             
             <section class="top-bar-section">
                 <ul class="right">
+                    {{location}}
                     <li data-ng-repeat="item in bookNav | orderBy: id" class="{{item.class}}"><a href="{{item.url}}" title="{{item.title}}">{{item.navTitle}}</a></li>
                 </ul>
             </section>
@@ -29,7 +29,7 @@
         <audio-loop></audio-loop>    
     </header>
 
-    <div class="mainContainer" data-ng-app="dd">
+    <div class="mainContainer" data-ng-view>
 
     </div>
 
@@ -54,14 +54,16 @@
     </footer>
 
     <!-- JAVASCRIPT -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/tweenlite/TweenLite.min.js"></script>
-    <script src="bower_components/modernizr/modernizr.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/modules.js"></script>
     <script src="js/configs.js"></script>
+    <script src="js/general/generalDirective.js"></script>
+    <script src="js/general/generalCtrl.js"></script>
     <!-- END JAVASCRIPT -->
 </body>
 </html>
