@@ -3,6 +3,9 @@ module.exports = function (grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
+		clean: {
+			dist: ['bin']
+		},
 		copy: {
 			target: {
 				files: {
@@ -31,8 +34,13 @@ module.exports = function (grunt) {
 			jsConcat: {
 				files: [
 					{
-                        src: ['js/modernizr.js', 'js/foundation.min.js', 'js/jquery.js', 'js/libs/angular.min.js'], 
-                        dest: 'bin/js/<%= pkg.name %>.js'
+                        src: ['js/jquery.js', 'js/foundation.min.js', 
+                        'bower_components/modernizr/modernizr.js', 'bower_components/angular/angular.min.js', 
+                        'bower_components/angular-route/angular-route.min.js', 'bower_components/tweenlite/TweenLite.min.js',
+                        'js/app.js', 'js/modules.js', 'js/configs.js',
+                        'js/general/changeBackgroundDirective.js', 'js/general/generalFactory.js', 'js/general/generalDirective.js', 'js/general/generalCtrl.js',
+                        'js/audio/*.js'], 
+                        dest: 'js/<%= pkg.name %>.js'
                     }
 				],
 			},
@@ -50,13 +58,14 @@ module.exports = function (grunt) {
 				tasks: ['sass']
 			},
 			js: {
-				files: '**/**/*.js',
+				files: 'js/**/*.js',
 				tasks: ['concat']
 			}
 		}
 	});
 
 	//plugins
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
@@ -64,6 +73,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	//tasks
-	grunt.registerTask('default', ['sass', 'copy', 'concat']);
+	grunt.registerTask('default', ['clean', 'sass', 'copy', 'concat']);
 	grunt.registerTask('dev', ['sass']);
 }

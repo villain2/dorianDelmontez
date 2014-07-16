@@ -3,10 +3,10 @@
         "bookItems": [
             {
                 "id": 1,
-                "title": "Explore",
-                "navTitle": "Explore",
+                "title": "Story",
+                "navTitle": "Story",
                 "class": "bookNav",
-                "url": "/#/explore"
+                "url": "/#/story"
             },
             {
                 "id": 2,

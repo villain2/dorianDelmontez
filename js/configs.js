@@ -7,13 +7,16 @@
 	{
 		$routeProvider
 			.when('/', {
-				controller: DorianDelmontez.Controllers.MainCtrl
+				controller: DorianDelmontez.Controllers.MainCtrl,
+				templateUrl: DorianDelmontez.PartialsPath + 'index.html'
 			})
 			.when('/story', {
-				controller: DorianDelmontez.Controllers.StoryCtrl
+				controller: DorianDelmontez.Controllers.StoryCtrl,
+				templateUrl: DorianDelmontez.PartialsPath + 'story.html'
 			})
 			.when('/read', {
-				controller: DorianDelmontez.ReadCtrl
+				controller: DorianDelmontez.ReadCtrl,
+				templateUrl: DorianDelmontez.PartialsPath + 'read.html'
 			})
 			.when('/game', {
 				controller: DorianDelmontez.GameCtrl

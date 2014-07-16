@@ -4,11 +4,7 @@
 	{
 		return {
 			restrict: 'A',
-			controller: DorianDelmontez.Controllers.GeneralCtrl,
-			link: function (scope, elm)
-			{
-				console.log('general directive');
-			}
+			controller: DorianDelmontez.Controllers.GeneralCtrl
 		};
 	});
 

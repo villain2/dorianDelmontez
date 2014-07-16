@@ -86,6 +86,13 @@ header {
   min-width: 320px;
   min-height: 480px; }
 
+.copyBlock {
+  margin-top: 100px;
+  background: white;
+  padding: 20px; }
+  .copyBlock p, .copyBlock ul, .copyBlock li {
+    font-family: Georgia, Times New Roman, serif; }
+
 .footer {
   height: 80px;
   padding: 10px;
